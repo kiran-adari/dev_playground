@@ -29,6 +29,8 @@ public class QuerySum {
 
     public void optimised_approach()
     {
+        //TC: O(N)
+        //SC: O(N)
         var obj = new PrefixSum();
         int[] prefix_arr = obj.prefixSum(arr);
         int[] res_arr = new int[q_len];
