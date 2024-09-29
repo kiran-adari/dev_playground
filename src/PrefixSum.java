@@ -19,4 +19,42 @@ public class PrefixSum {
          */
         return prefix_sum;
     }
+
+    public int[] evenPrefixSum(int[] arr)
+    {
+        int n = arr.length;
+        int[] pfe = new int[n];
+        pfe[0] = arr[0];
+        for(int i = 1; i < n; i++)
+        {
+            if(i%2 == 0)
+            {
+                pfe[i] = arr[i] + pfe[i-1];
+            }
+            else
+            {
+                pfe[i] = pfe[i-1];
+            }
+        }
+        return pfe;
+    }
+
+    public int[] oddPrefixSum(int[] arr)
+    {
+        int n = arr.length;
+        int[] pfo = new int[n];
+        pfo[0] = 0;
+        for(int i = 1; i < n; i++)
+        {
+            if(i%2 != 0)
+            {
+                pfo[i] = arr[i] + pfo[i-1];
+            }
+            else
+            {
+                pfo[i] = pfo[i-1];
+            }
+        }
+        return pfo;
+    }
 }
